@@ -1,7 +1,12 @@
 {
-  "compilerOptions": {
-    "paths": {
-      "@/*": ["./src/*"]
-    }
-  }
+    "compilerOptions": {
+        // "module": "ES6",
+        "jsx": "preserve",
+        // TypeScript 타입 검사
+        "checkJs": true,
+        "paths": {
+            "@/*": ["./src/*"]
+        }
+    },
+    "exclude": ["node_modules", "**/node_modules/*", "dist", "build"]
 }
