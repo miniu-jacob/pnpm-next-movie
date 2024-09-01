@@ -2,6 +2,7 @@ import axios from 'axios';
 
 // .env.local 에 정의한 환경 변수를 가져온다.
 // vercel 에 올릴 때는 변수로 세팅해 준다.
+// @ts-ignore
 const API_KEY = process.env.NEXT_PUBLIC_TMDB_ACCESS_TOKEN;
 
 if (!API_KEY) {
@@ -26,6 +27,7 @@ axios.interceptors.request.use(
     },
     function (error) {
         // 요청 오류가 있는 작업 수행
+        // @ts-ignore
         return Promise.reject(error);
     },
 );

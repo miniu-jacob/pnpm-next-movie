@@ -1,3 +1,9 @@
 {
-    "extends": ["next/core-web-vitals"]
+    "extends": ["next/core-web-vitals"],
+    "env": {
+        "browser": true,
+        "es2021": true,
+        // node.js 환경을 추가하여 process 객체를 인식할 수 있게 함.
+        "node": true
+    }
 }
