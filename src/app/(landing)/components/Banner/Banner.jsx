@@ -45,11 +45,12 @@ const Banner = () => {
                     `https://www.themoviedb.org/t/p/w1066_and_h600_bestv2${posterPath}` +
                     ')',
             }}
-            className='h-[56vh] bg-left banner w-full bg-no-repeat bg-cover'
+            className='h-[56vh] bg-left- banner w-full bg-no-repeat bg-cover object-cover '
         >
             <div
-                className='text-white  banner-text-area
-                w-[45%] flex flex-col justify-center h-[100%] p-[3rem] gap-4
+                className='text-white  banner-text-area w-[90%] md:w-[45%]
+                flex flex-col justify-end md:justify-center h-[100%] p-[3rem] gap-4
+                pb-[10%] md:pb-0
             '
             >
                 <h1 className='text-3xl z-10 font-semibold'>{bannerTitle}</h1>
