@@ -1,3 +1,4 @@
+import React from 'react';
 import './page.style.css';
 const MovieDetailPage = () => {
     return <div className=''>MovieDetailPage</div>;
