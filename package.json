@@ -9,8 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.8.2",
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
     "@tanstack/react-query": "^5.53.1",
     "axios": "^1.7.7",
+    "framer-motion": "^11.3.31",
     "lucide-react": "^0.437.0",
     "next": "14.2.7",
     "prop-types": "^15.8.1",
