@@ -2,12 +2,7 @@
 import { usePopularMoviesQuery } from '@/hooks/usePopularMovies';
 import './Banner.style.css';
 import React from 'react';
-import {
-    Alert,
-    AlertIcon,
-    AlertTitle,
-    AlertDescription,
-} from '@chakra-ui/react';
+import ErrorAlert from '../ErrorAlert';
 
 const Banner = () => {
     const { data, isLoading, isError, error } = usePopularMoviesQuery();
@@ -16,19 +11,7 @@ const Banner = () => {
         <h1>Loading...</h1>;
     }
 
-    if (isError) {
-        return (
-            <>
-                <h1>{error.message}</h1>;
-                <Alert status='error'>
-                    <AlertIcon />
-                    <AlertTitle>에러 발생!</AlertTitle>
-                    <AlertDescription>{error.message}</AlertDescription>
-                </Alert>
-                ;
-            </>
-        );
-    }
+    if (isError) return <ErrorAlert message={error.message} />;
 
     const posterPath = data?.results?.[0].poster_path;
     const bannerTitle = data?.results?.[0].title;
@@ -45,7 +28,7 @@ const Banner = () => {
                     `https://www.themoviedb.org/t/p/w1066_and_h600_bestv2${posterPath}` +
                     ')',
             }}
-            className='h-[56vh] bg-left- banner w-full bg-no-repeat bg-cover object-cover '
+            className='h-[56vh] bg-left banner w-full bg-no-repeat bg-cover '
         >
             <div
                 className='text-white  banner-text-area w-[90%] md:w-[45%]

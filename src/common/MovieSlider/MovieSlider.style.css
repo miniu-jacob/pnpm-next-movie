@@ -1,0 +1,9 @@
+.movie-slider {
+    margin-left: clamp(1rem, 4vw + 1rem, 3rem);
+    position: relative;
+}
+
+.movie-slider h3 {
+    position: absolute;
+    top: 0px;
+}
