@@ -30,11 +30,11 @@ const MovieCard = ({ movie, title }) => {
             }}
             className='movie-card'
         >
-            <div className='p-2 overlay flex flex-col justify-between relative'>
-                <div className='grow '>
-                    <h1 className='text-3xl'>{movie.title}</h1>
+            <div className='overlay'>
+                <div className='box-grow'>
+                    <h1 className='title-font'>{movie.title}</h1>
                 </div>
-                <div className='flex mb-4 genre-container'>
+                <div className='genre-container'>
                     {showGenre(movie.genre_ids).map((id, index) => (
                         <Badge
                             key={index}
@@ -48,8 +48,8 @@ const MovieCard = ({ movie, title }) => {
                         </Badge>
                     ))}
                 </div>
-                <div className='flex gap-2  box-border'>
-                    <div className='flex items-center justify-center'>
+                <div className='star-box'>
+                    <div className='star-image'>
                         <Image
                             src={'/star.png'}
                             alt={'star-icon'}
@@ -73,13 +73,9 @@ const MovieCard = ({ movie, title }) => {
                     </div>
                     <div className=''>
                         {movie.adult ? (
-                            <div className='flex items-center justify-center w-8 h-8 text-sm font-semibold text-white bg-red-400 rounded-full p-[4px] '>
-                                +18
-                            </div>
+                            <div className='mark-adult'>+18</div>
                         ) : (
-                            <div className='flex items-center justify-center w-8 h-8 text-sm font-semibold text-white bg-green-500 rounded-full p-[4px] '>
-                                All
-                            </div>
+                            <div className='mark-not-adult'>All</div>
                         )}
                     </div>
                 </div>
@@ -87,7 +83,7 @@ const MovieCard = ({ movie, title }) => {
             {/* 우측 상단 top 10 이미지 고정 */}
             {lowerCaseTitle === 'top rated movies' && (
                 <div className='top10-logo'>
-                    <div className='top-rated p-2 font-semibold'>Top Rank</div>
+                    <div className='top-rated'>Top Rank</div>
                 </div>
             )}
         </div>

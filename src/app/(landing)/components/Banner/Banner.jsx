@@ -31,7 +31,7 @@ const Banner = () => {
             className='h-[56vh] bg-left banner w-full bg-no-repeat bg-cover '
         >
             <div
-                className='text-white  banner-text-area w-[90%] md:w-[45%]
+                className='text-white  banner-text-area w-[100%] md:w-[45%]
                 flex flex-col justify-end md:justify-center h-[100%] p-[3rem] gap-4
                 pb-[10%] md:pb-0
             '
