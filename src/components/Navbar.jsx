@@ -1,8 +1,24 @@
+'use client';
 import React from 'react';
 import { Menu } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 const Navbar = () => {
+    // 검색어 입력 시 이동
+    const [keyword, setKeyword] = useState('');
+    const router = useRouter();
+
+    const searchByKeyword = (event) => {
+        if (keyword.trim()) {
+            router.push(`/movies?q=${keyword}`);
+        }
+        console.log('입력값: ', keyword);
+        setKeyword('');
+        // URL 을 바꿔 주기
+    };
+
     return (
         <div className='flex justify-between md:justify-around  h-[50px] w-full items-center p-4 bg-black'>
             {/*LOGO  */}
@@ -31,9 +47,16 @@ const Navbar = () => {
                     <input
                         type='text'
                         placeholder='Search'
+                        value={keyword}
+                        onChange={(event) => setKeyword(event.target.value)}
                         className='border border-gray-600 w-full h-full p-1  rounded-md outline-none text-slate-200 bg-black mr-6'
                     />
-                    <button className='text-red-400 border border-red-800 w-[130px] p-1 rounded-md'>
+                    <button
+                        className='text-red-400 border border-red-800 w-[130px] p-1 rounded-md'
+                        onClick={() => {
+                            searchByKeyword();
+                        }}
+                    >
                         Search
                     </button>
                 </div>
