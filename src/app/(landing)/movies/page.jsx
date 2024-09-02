@@ -20,7 +20,7 @@ const MoviesPage = () => {
     const searchParams = useSearchParams();
     const keyword = searchParams.get('q');
     const { data, isLoading, isError, error } = useSearchMovieQuery({
-        keyword: keyword || 'popularMovie',
+        keyword,
     });
     console.log('search data:', data);
     // LOADING SPINNER and
